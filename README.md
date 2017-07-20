@@ -8,6 +8,7 @@ Aktiva-V2のサーバ用リポジトリです。
 * [Ruby 2.4.1](https://github.com/ruby/ruby)
 * [Ruby on Rails 5.1.2](https://github.com/rails/rails)
 * [bundler](http://bundler.io/)
+* [mysql2 0.4.8](https://github.com/brianmario/mysql2)
 * [editorconfig plugin](http://editorconfig.org/#download)
 
 ### Xcode Command line tools
@@ -43,6 +44,11 @@ gem install rails -v 5.1.2
 ### bundler
 ```sh
 gem install bundler
+```
+
+### mysql
+```sh
+brew install mysql
 ```
 
 ### editorconfig plugin
