@@ -45,11 +45,11 @@ gem install bundler
 ## セットアップ
 1. 次のコマンドを実行する。
 ```sh
-git clone git@github.com:cyder-akashi/Aktiva-V2-Server.git
+git clone git@github.com:cyder-akashi/Aktiva-V2-Server.git
 cd Aktiva-V2-Server
 ```
 
-2. Gemライブラリをインストールする
+2. Gemライブラリをインストールする
 ```sh
 bundle update
 bundle install --path=vendor/bundle
