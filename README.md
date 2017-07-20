@@ -6,6 +6,7 @@ Aktiva-V2のサーバ用リポジトリです。
 * [Homebrew](https://brew.sh/index_ja.html)
 * [rbenv](https://github.com/rbenv/rbenv)
 * [Ruby 2.4.1](https://github.com/ruby/ruby)
+* [Ruby on Rails 5.1.2](https://github.com/rails/rails)
 * [bundler](http://bundler.io/)
 * [editorconfig plugin](http://editorconfig.org/#download)
 
@@ -32,6 +33,11 @@ source ~/.bash_profile
 ### Ruby 2.4.1
 ```sh
 rbenv install 2.4.1
+```
+
+### Ruby on rails 5.1.2
+```sh
+gem install rails -v 5.1.2
 ```
 
 ### bundler
