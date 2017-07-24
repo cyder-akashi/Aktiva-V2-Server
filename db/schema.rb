@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724173858) do
+ActiveRecord::Schema.define(version: 20170724174023) do
 
   create_table "people", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
@@ -18,4 +18,24 @@ ActiveRecord::Schema.define(version: 20170724173858) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "songs", primary_key: "song_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title", null: false
+    t.bigint "artist_id", null: false
+    t.bigint "lyricist_id"
+    t.bigint "composer_id"
+    t.bigint "choreographer_id"
+    t.boolean "beginners_badge", default: false
+    t.boolean "person_badge", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_songs_on_artist_id"
+    t.index ["choreographer_id"], name: "index_songs_on_choreographer_id"
+    t.index ["composer_id"], name: "index_songs_on_composer_id"
+    t.index ["lyricist_id"], name: "index_songs_on_lyricist_id"
+  end
+
+  add_foreign_key "songs", "people", column: "artist_id"
+  add_foreign_key "songs", "people", column: "choreographer_id"
+  add_foreign_key "songs", "people", column: "composer_id"
+  add_foreign_key "songs", "people", column: "lyricist_id"
 end
