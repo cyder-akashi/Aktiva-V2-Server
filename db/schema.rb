@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724174023) do
+ActiveRecord::Schema.define(version: 20170724174830) do
 
   create_table "lyrics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "song_id"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20170724174023) do
     t.index ["lyricist_id"], name: "index_songs_on_lyricist_id"
   end
 
+  add_foreign_key "lyrics", "songs", primary_key: "song_id"
   add_foreign_key "songs", "people", column: "artist_id"
   add_foreign_key "songs", "people", column: "choreographer_id"
   add_foreign_key "songs", "people", column: "composer_id"

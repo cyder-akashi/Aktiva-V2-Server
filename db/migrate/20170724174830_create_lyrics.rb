@@ -6,6 +6,6 @@ class CreateLyrics < ActiveRecord::Migration[5.1]
       t.string :text
       t.timestamps
     end
-    add_foreign_key :lyrics, :songs, column: :song_id
+    add_foreign_key :lyrics, :songs, primary_key: :song_id
   end
 end
