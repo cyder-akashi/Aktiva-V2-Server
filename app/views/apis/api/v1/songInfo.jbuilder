@@ -20,3 +20,7 @@ if not @horeographer.nil? then
 else
   json.set! :choreographer, nil
 end
+json.set! :badge do
+  json.set! :beginners, @song.beginners_badge
+  json.set! :person, @song.person_badge
+end
