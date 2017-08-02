@@ -11,7 +11,7 @@ module API
 
       # 例外ハンドル 404
       rescue_from ActiveRecord::RecordNotFound do |e|
-        rack_response({ message: e.message, status: 404 }.to_json, 404)
+        error!({ message: e.message, status: 404 }, 404)
       end
 
       # 例外ハンドル 400
@@ -24,7 +24,7 @@ module API
         if Rails.env.development?
           raise e
         else
-          error_response(message: "Internal server error", status: 500)
+          error!({ message: "Internal server error", status: 500 }, 500)
         end
       end
 
