@@ -7,7 +7,6 @@ module API
       # for Grape::Jbuilder
       formatter :json, Grape::Formatter::Jbuilder
 
-      prefix :api # /apiというパスになる
       version 'v1', using: :path # /api/v1というパスになる
 
       # 例外ハンドル 404
