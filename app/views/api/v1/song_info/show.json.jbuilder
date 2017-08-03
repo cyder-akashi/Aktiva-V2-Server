@@ -1,25 +1,17 @@
 json.set! :song_id, @song.song_id
 json.set! :title, @song.title
-if @artist.present? then
-  json.artist(@artist, :id, :name)
-else
-  json.set! :artist, nil
-end
-if @lyricist.present? then
-  json.lyricist(@lyricist, :id, :name)
-else
-  json.set! :lyricist, nil
-end
-if @composer.present? then
-  json.composer(@composer, :id, :name)
-else
-  json.set! :composer, nil
-end
-if @horeographer.present? then
-  json.choreographer(@choreographer, :id, :name)
-else
-  json.set! :choreographer, nil
-end
+@song.artist.present? ?
+  json.artist(@song.artist, :id, :name) :
+  json.set!(:artist, nil)
+@song.lyricist.present? ?
+  json.artist(@song.lyricist, :id, :name) :
+  json.set!(:lyricist, nil)
+@song.composer.present? ?
+  json.composer(@song.composer, :id, :name) :
+  json.set!(:composer, nil)
+@song.choreographer.present? ?
+  json.choreographer(@song.choreographer, :id, :name) :
+  json.set!(:choreographer, nil)
 json.set! :badge do
   json.set! :beginners, @song.beginners_badge
   json.set! :person, @song.person_badge
