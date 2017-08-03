@@ -6,7 +6,7 @@ class Api::V1::SongInfoControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
-    get api_v1_song_info_show_url, params: { song_id: @song.song_id }
+    get api_v1_song_info_url, params: { song_id: @song.song_id }
     assert_response :success
   end
 
