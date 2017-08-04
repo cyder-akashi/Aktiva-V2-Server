@@ -1,2 +1,14 @@
+AllCops:
+  Exclude:
+    - bin/*
+    - config/unicorn.rb
+    - db/**
+    - db/migrate/*
+    - vendor/**/*
+
 Rails:
   Enabled: true
+
+# Use only ascii symbols in comments.
+AsciiComments:
+  Enabled: false
