@@ -1,3 +1,4 @@
+# アーティスト、作詞者、作曲者、振り付け師情報
 class Person < ApplicationRecord
   has_many :artists, class_name: 'Song', foreign_key: 'artist_id'
   has_many :lyricists, class_name: 'Song', foreign_key: 'lyricist_id'
