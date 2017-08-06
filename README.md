@@ -63,7 +63,6 @@ cd Aktiva-V2-Server
 
 2. Gemライブラリをインストールする
 ```sh
-bundle update
 bundle install --path=vendor/bundle
 ```
 
