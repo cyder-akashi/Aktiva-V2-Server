@@ -63,11 +63,21 @@ cd Aktiva-V2-Server
 
 2. Gemライブラリをインストールする
 ```sh
-bundle update
 bundle install --path=vendor/bundle
 ```
 
-3. サーバを起動する
+3. MySqlを起動する
+```sh
+mysql.server start
+```
+
+4. Databaseを作成する
+```sh
+bundle exec rake db:migrate
+bundle exec rake db:seed
+```
+
+5. サーバを起動する
 ```sh
 rails server
 ```
