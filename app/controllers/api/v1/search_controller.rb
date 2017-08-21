@@ -4,8 +4,8 @@ module Api
     class SearchController < ApplicationController
       def index
         check_params
-        @song = Search::Song.new(@keyword, @num, @page)
-        @songs = @song.matches
+        song_search_object = Search::Song.new(@keyword, @num, @page)
+        @songs = song_search_object.matches
         render 'index', formats: 'json', handlers: 'jbuilder'
       end
 
