@@ -7,7 +7,9 @@
 one:
   title: Example Song1
   artist: person_one
+  video: video_one
 
 two:
   title: Example Song1
   artist: person_two
+  video: video_two

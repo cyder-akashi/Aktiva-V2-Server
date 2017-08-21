@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724174830) do
+ActiveRecord::Schema.define(version: 20170821135705) do
 
   create_table "lyrics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "song_id", null: false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170724174830) do
     t.boolean "person_badge", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "video", null: false
     t.index ["artist_id"], name: "index_songs_on_artist_id"
     t.index ["choreographer_id"], name: "index_songs_on_choreographer_id"
     t.index ["composer_id"], name: "index_songs_on_composer_id"
