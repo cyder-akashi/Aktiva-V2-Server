@@ -10,7 +10,8 @@ module Search
     end
 
     def matches
-      ::Song.where(contains(:title, keyword)).offset(num * (page - 1)).limit(num)
+      offset_num = num * (page - 1)
+      ::Song.where(contains(:title, keyword)).offset(offset_num).limit(num)
     end
   end
 end
