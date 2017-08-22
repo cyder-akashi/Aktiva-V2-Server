@@ -15,3 +15,6 @@ AsciiComments:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Style/MultilineTernaryOperator:
+  Enabled: false

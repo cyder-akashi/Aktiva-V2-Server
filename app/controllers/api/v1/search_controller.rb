@@ -2,8 +2,11 @@ module Api
   module V1
     # 検索用コントローラ
     class SearchController < ApplicationController
-      DEFAULT_NUM = 10
-      DEFAULT_PAGE = 1
+      module Constants
+        DEFAULT_NUM = 10
+        DEFAULT_PAGE = 1
+      end
+      Constants.freeze
 
       def index
         check_params
@@ -16,8 +19,10 @@ module Api
 
       def check_params
         @keyword = params[:keyword]
-        @num = params[:num].present? ? params[:num].to_i : DEFAULT_NUM
-        @page = params[:page].present? ? params[:page].to_i : DEFAULT_PAGE
+        @num = params[:num].present? ? params[:num].to_i
+                                     : Constants::DEFAULT_NUM
+        @page = params[:page].present? ? params[:page].to_i
+                                       : Constants::DEFAULT_PAGE
       end
     end
   end
