@@ -24,3 +24,4 @@ json.set! :badge do
   json.set! :beginners, @song.beginners_badge
   json.set! :person, @song.person_badge
 end
+json.set! :video, @song.video
