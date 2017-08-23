@@ -7,11 +7,16 @@ module Search
       @keyword = keyword
       @num = num
       @page = page
+      @songs = ::Song.where(contains(:title, keyword))
     end
 
     def matches
       offset_num = num * (page - 1)
-      ::Song.where(contains(:title, keyword)).offset(offset_num).limit(num)
+      @songs.offset(offset_num).limit(num)
+    end
+
+    def hit_num
+      @songs.count
     end
   end
 end

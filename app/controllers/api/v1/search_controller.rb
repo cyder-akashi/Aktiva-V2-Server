@@ -12,6 +12,7 @@ module Api
         check_params
         song_search_object = Search::Song.new(@keyword, @num, @page)
         @songs = song_search_object.matches
+        @hit = song_search_object.hit_num
         render 'index', formats: 'json', handlers: 'jbuilder'
       end
 
