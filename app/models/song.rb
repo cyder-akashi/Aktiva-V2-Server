@@ -16,5 +16,6 @@ class Song < ApplicationRecord
              foreign_key: 'lyricist_id',
              optional: true
   has_many :lyrics
+  has_many :play_logs
   validates :title, presence: true
 end
