@@ -5,4 +5,7 @@ Rails.application.routes.draw do
       get 'search', to: 'search#index'
     end
   end
+  namespace :admin do
+    resources :songs
+  end
 end
