@@ -4,7 +4,6 @@ module Search
     attr_accessor :keyword, :num, :page
 
     def initialize(keyword, num, page)
-      @keyword = keyword
       @num = num
       @page = page
       @songs = ::Song.where(contains(:title, keyword))
