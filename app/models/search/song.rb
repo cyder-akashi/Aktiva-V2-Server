@@ -15,7 +15,7 @@ module Search
       @songs.offset(offset_num).limit(num)
     end
 
-    def hit_num
+    def hit_count
       @songs.count
     end
   end
