@@ -4,6 +4,7 @@ module Api
     class LyricsController < ApplicationController
       def index
         @song = Song.find(params[:song_id])
+        @lyrics = @song.lyrics.order(:time)
         render 'index', formats: 'json', handlers: 'jbuilder'
       end
     end
