@@ -15,7 +15,7 @@ module Search
     end
 
     def hit_count
-      @songs.count
+      @songs.length
     end
   end
 end
