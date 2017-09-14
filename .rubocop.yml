@@ -18,3 +18,9 @@ Style/FrozenStringLiteralComment:
 
 Style/MultilineTernaryOperator:
   Enabled: false
+
+LineLength:
+  Max: 100
+
+MethodLength:
+  Max: 20
