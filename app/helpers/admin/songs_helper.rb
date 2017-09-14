@@ -1,4 +1,3 @@
-# adminの
 module Admin
   # helper
   module SongsHelper
