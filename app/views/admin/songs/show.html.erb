@@ -77,6 +77,9 @@
   <% end %>
 </table>
 
+<% url = "http://133.242.226.13/" +  @song.video %>
+<%= video_tag(url, :controls => true) %>
+
 <br>
 
 <%= link_to 'Edit', edit_admin_song_path(@song) %> |
