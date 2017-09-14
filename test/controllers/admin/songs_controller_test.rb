@@ -10,5 +10,10 @@ module Admin
       get admin_songs_url
       assert_response :success
     end
+
+    test 'should get show' do
+      get admin_song_url(@song.id)
+      assert_response :success
+    end
   end
 end
