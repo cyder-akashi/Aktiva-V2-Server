@@ -12,7 +12,7 @@ module Admin
     end
 
     test 'should get show' do
-      get admin_song_url(@song.id)
+      get admin_song_url(@song.song_id)
       assert_response :success
     end
   end
