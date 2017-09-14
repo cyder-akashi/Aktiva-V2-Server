@@ -10,7 +10,7 @@ module Search
     end
 
     def matches
-      offset_num = num * (page - 1)
+      offset_num = @num * (@page - 1)
       @songs.offset(offset_num).limit(num)
     end
 
