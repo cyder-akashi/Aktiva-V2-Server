@@ -4,12 +4,9 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one:
-  title: Example Song1
-  artist: person_one
-  video: video_one
-
-two:
-  title: Example Song1
-  artist: person_two
-  video: video_two
+one: 
+  song_id: one
+  time: '2016/12/29 12:30'
+two: 
+  song_id: two
+  time: '2017/08/09 12:55'

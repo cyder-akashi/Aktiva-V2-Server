@@ -51,4 +51,4 @@ production:
   <<: *default
   database: Aktiva-V2-API_production
   username: Aktiva-V2-API
-  password: <%= ENV['AKTIVA-V2-API_DATABASE_PASSWORD'] %>
+  password: <%= ENV['AKTIVA_V2_API_DATABASE_PASSWORD'] %>

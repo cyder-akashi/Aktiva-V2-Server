@@ -4,7 +4,7 @@ module Api
     class SongInfoController < ApplicationController
       def index
         @song = Song.find(params[:song_id])
-        render 'show', formats: 'json', handlers: 'jbuilder'
+        render 'index', formats: 'json', handlers: 'jbuilder'
       end
     end
   end

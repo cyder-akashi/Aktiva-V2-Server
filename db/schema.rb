@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724174830) do
+ActiveRecord::Schema.define(version: 20170831144414) do
 
   create_table "lyrics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "song_id", null: false
-    t.time "time", null: false
+    t.time "time", precision: 3, null: false
     t.string "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20170724174830) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "play_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "song_id", null: false
+    t.datetime "time", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_play_logs_on_song_id"
+  end
+
   create_table "songs", primary_key: "song_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title", null: false
     t.bigint "artist_id", null: false
@@ -37,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170724174830) do
     t.boolean "person_badge", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "video", null: false
     t.index ["artist_id"], name: "index_songs_on_artist_id"
     t.index ["choreographer_id"], name: "index_songs_on_choreographer_id"
     t.index ["composer_id"], name: "index_songs_on_composer_id"
@@ -44,6 +53,7 @@ ActiveRecord::Schema.define(version: 20170724174830) do
   end
 
   add_foreign_key "lyrics", "songs", primary_key: "song_id"
+  add_foreign_key "play_logs", "songs", primary_key: "song_id"
   add_foreign_key "songs", "people", column: "artist_id"
   add_foreign_key "songs", "people", column: "choreographer_id"
   add_foreign_key "songs", "people", column: "composer_id"
