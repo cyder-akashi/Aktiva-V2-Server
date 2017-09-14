@@ -23,24 +23,38 @@
     <tr>
       <td>アーティスト</td>
       <td> : </td>
-      <td><%= @song.artist.name %>(ID:<%= @song.artist.id %>)</td>
+      <% if @song.artist.present? %>
+        <td><%= @song.artist.name %>(ID:<%= @song.artist.id %>)</td>
+      <% else %>
+        <td>null</td>
+      <% end %>
     </tr>
     <tr>
       <td>作曲者</td>
       <td> : </td>
-      <td><%= @song.composer.name %>(ID:<%= @song.composer.id %>)</td>
+      <% if @song.composer.present? %>
+        <td><%= @song.composer.name %>(ID:<%= @song.composer.id %>)</td>
+      <% else %>
+        <td>null</td>
+      <% end %>
     </tr>
     <tr>
       <td>作詞者</td>
       <td> : </td>
-      <td><%= @song.lyricist.name %>(ID:<%= @song.lyricist.id %>)</td>
+      <% if @song.lyricist.present? %>
+        <td><%= @song.lyricist.name %>(ID:<%= @song.lyricist.id %>)</td>
+      <% else %>
+        <td>null</td>
+      <% end %>
     </tr>
     <tr>
       <td>振付師</td>
       <td> : </td>
-      <td><%= @song.choreographer.name %>(ID:<%= @song.choreographer.id %>)</td>
-    </tr>
-  </tbody>
+      <% if @song.choreographer.present? %>
+        <td><%= @song.choreographer.name %>(ID:<%= @song.choreographer.id %>)</td>
+      <% else %>
+        <td>null</td>
+      <% end %>
 </table>
 
 <h1>Badge</h1>
