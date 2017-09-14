@@ -2,5 +2,5 @@
 
 <%= render 'form', song: @song %>
 
-<%= link_to 'Show', @song %> |
+<%= link_to 'Show', admin_song_path(@song.id) %> |
 <%= link_to 'Back', admin_songs_path %>

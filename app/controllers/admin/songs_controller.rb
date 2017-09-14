@@ -28,7 +28,7 @@ module Admin
       message = 'Song was successfully created.'
       respond_to do |format|
         if @song.save
-          format.html { redirect_to @song, notice: message }
+          format.html { redirect_to [:admin, @song], notice: message }
           format.json { render :show, status: :created, location: @song }
         else
           format.html { render :new }
@@ -74,6 +74,10 @@ module Admin
     # only allow the white list through.
     def song_params
       params.fetch(:song, {})
+      params.require(:song).permit(
+        :title, :artist_id, :lyricist_id, :composer_id,
+        :choreographer_id, :beginners_badge, :person_badge, :video
+      )
     end
   end
 end

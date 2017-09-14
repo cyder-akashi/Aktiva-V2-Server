@@ -1,8 +1,7 @@
-<%= form_with(model: song, local: true) do |form| %>
+<%= form_with(model: [:admin, song], local: true) do |form| %>
   <% if song.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(song.errors.count, "error") %> prohibited this song from being saved:</h2>
-
       <ul>
       <% song.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,7 +10,50 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div>
+    <%= form.label :title , "曲名",:class => 'control-label col-sm-2' %>
+    <%= form.text_field :title %>
   </div>
+
+  <div>
+    <%= form.label :artist_id , "アーティストID",:class => 'control-label col-sm-2' %>
+    <%= form.text_field :artist_id %>
+  </div>
+
+  <div>
+    <%= form.label :composer_id , "作曲者ID",:class => 'control-label col-sm-2' %>
+    <%= form.text_field :composer_id %>
+  </div>
+
+  <div>
+    <%= form.label :lyricist_id , "作詞者ID",:class => 'control-label col-sm-2' %>
+    <%= form.text_field :lyricist_id %>
+  </div>
+  
+  <div>
+    <%= form.label :choreographer_id , "振付師ID",:class => 'control-label col-sm-2' %>
+    <%= form.text_field :choreographer_id %>
+  </div>
+
+  <div>
+    <%= form.label :video , "動画ファイル名",:class => 'control-label col-sm-2' %>
+    <%= form.text_field :video %>
+  </div>
+
+  <h2>Badge</h2>
+  
+  <div>
+    <%= form.label :beginners_badge , "初心者向け",:class => 'control-label col-sm-2' %>
+    <%= form.check_box :beginners_badge %>
+  </div>
+
+  <div>
+    <%= form.label :person_badge , "本人映像",:class => 'control-label col-sm-2' %>
+    <%= form.check_box :person_badge %>
+  </div>
+
+  <div class="actions form-group">
+    <%= form.submit "投稿する",:class => 'col-sm-offset-3 col-sm-3 btn btn-success'%>
+  </div>
+
 <% end %>
