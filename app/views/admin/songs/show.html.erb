@@ -3,70 +3,57 @@
 <h1><%= @song.title %> の詳細情報</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>曲ID</td>
-      <td> : </td>
-      <td><%= @song.id %></td>
-    </tr>
-    <tr>
-      <td>曲名</td>
-      <td> : </td>
-      <td><%= @song.title %></td>
-    </tr>
-    <tr>
-      <td>アーティスト</td>
-      <td> : </td>
-      <% if @song.artist.present? %>
-        <td><%= @song.artist.name %>(ID:<%= @song.artist.id %>)</td>
-      <% else %>
-        <td>null</td>
-      <% end %>
-    </tr>
-    <tr>
-      <td>作曲者</td>
-      <td> : </td>
-      <% if @song.composer.present? %>
-        <td><%= @song.composer.name %>(ID:<%= @song.composer.id %>)</td>
-      <% else %>
-        <td>null</td>
-      <% end %>
-    </tr>
-    <tr>
-      <td>作詞者</td>
-      <td> : </td>
-      <% if @song.lyricist.present? %>
-        <td><%= @song.lyricist.name %>(ID:<%= @song.lyricist.id %>)</td>
-      <% else %>
-        <td>null</td>
-      <% end %>
-    </tr>
-    <tr>
-      <td>振付師</td>
-      <td> : </td>
-      <% if @song.choreographer.present? %>
-        <td><%= @song.choreographer.name %>(ID:<%= @song.choreographer.id %>)</td>
-      <% else %>
-        <td>null</td>
-      <% end %>
+  <tr>
+    <td>曲ID</td>
+    <td> : </td>
+    <td><%= @song.id %></td>
+  </tr>
+  <tr>
+    <td>曲名</td>
+    <td> : </td>
+    <td><%= @song.title %></td>
+  </tr>
+  <tr>
+    <td>アーティスト</td>
+    <td> : </td>
+    <% if @song.artist.present? %>
+      <td><%= @song.artist.name %>(ID:<%= @song.artist.id %>)</td>
+    <% else %>
+      <td>null</td>
+    <% end %>
+  </tr>
+  <tr>
+    <td>作曲者</td>
+    <td> : </td>
+    <% if @song.composer.present? %>
+      <td><%= @song.composer.name %>(ID:<%= @song.composer.id %>)</td>
+    <% else %>
+      <td>null</td>
+    <% end %>
+  </tr>
+  <tr>
+    <td>作詞者</td>
+    <td> : </td>
+    <% if @song.lyricist.present? %>
+      <td><%= @song.lyricist.name %>(ID:<%= @song.lyricist.id %>)</td>
+    <% else %>
+      <td>null</td>
+    <% end %>
+  </tr>
+  <tr>
+    <td>振付師</td>
+    <td> : </td>
+    <% if @song.choreographer.present? %>
+      <td><%= @song.choreographer.name %>(ID:<%= @song.choreographer.id %>)</td>
+    <% else %>
+      <td>null</td>
+    <% end %>
+  </tr>
 </table>
 
 <h1>Badge</h1>
 
 <table>
-<thead>
-  <tr>
-    <th colspan="3"></th>
-  </tr>
-</thead>
-
-<tbody>
   <tr>
     <td>初心者向け</td>
     <td> : </td>
@@ -77,26 +64,17 @@
     <td> : </td>
     <td><%= @song.person_badge %></td>
   </tr>
-</tbody>
 </table>
 
 <h1>歌詞</h1>
 
 <table>
-<thead>
-  <tr>
-    <th colspan="3"></th>
-  </tr>
-</thead>
-
-<tbody>
   <% @song.lyrics.each do |lyric| %>
     <tr>
      <td><%= lyric.time.strftime("%M:%S:%L") %></td>
      <td><%= lyric.text %></td>
     </tr>
   <% end %>
-</tbody>
 </table>
 
 <br>
