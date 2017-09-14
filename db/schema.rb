@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831073920) do
+ActiveRecord::Schema.define(version: 20170831144414) do
 
   create_table "lyrics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "song_id", null: false
-    t.time "time", null: false
+    t.time "time", precision: 3, null: false
     t.string "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
