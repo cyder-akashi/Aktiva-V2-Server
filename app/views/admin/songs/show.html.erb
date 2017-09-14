@@ -1,4 +1,91 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @song.title %> の詳細情報</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>曲ID</td>
+      <td> : </td>
+      <td><%= @song.id %></td>
+    </tr>
+    <tr>
+      <td>曲名</td>
+      <td> : </td>
+      <td><%= @song.title %></td>
+    </tr>
+    <tr>
+      <td>アーティスト</td>
+      <td> : </td>
+      <td><%= @song.artist.name %></td>
+    </tr>
+    <tr>
+      <td>作曲者</td>
+      <td> : </td>
+      <td><%= @song.composer.name %></td>
+    </tr>
+    <tr>
+      <td>作詞者</td>
+      <td> : </td>
+      <td><%= @song.lyricist.name %></td>
+    </tr>
+    <tr>
+      <td>振付師</td>
+      <td> : </td>
+      <td><%= @song.choreographer.name %></td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>Badge</h1>
+
+<table>
+<thead>
+  <tr>
+    <th colspan="3"></th>
+  </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <td>初心者向け</td>
+    <td> : </td>
+    <td><%= @song.beginners_badge %></td>
+  </tr>
+  <tr>
+    <td>本人映像</td>
+    <td> : </td>
+    <td><%= @song.person_badge %></td>
+  </tr>
+</tbody>
+</table>
+
+<h1>歌詞</h1>
+
+<table>
+<thead>
+  <tr>
+    <th colspan="3"></th>
+  </tr>
+</thead>
+
+<tbody>
+  <% @song.lyrics.each do |lyric| %>
+    <tr>
+     <td><%= lyric.time.strftime("%M:%S:%L") %></td>
+     <td><%= lyric.text %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+
+<br>
+
 <%= link_to 'Edit', edit_admin_song_path(@song) %> |
 <%= link_to 'Back', admin_songs_path %>
