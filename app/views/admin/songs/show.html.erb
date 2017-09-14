@@ -23,22 +23,22 @@
     <tr>
       <td>アーティスト</td>
       <td> : </td>
-      <td><%= @song.artist.name %></td>
+      <td><%= @song.artist.name %>(ID:<%= @song.artist.id %>)</td>
     </tr>
     <tr>
       <td>作曲者</td>
       <td> : </td>
-      <td><%= @song.composer.name %></td>
+      <td><%= @song.composer.name %>(ID:<%= @song.artist.id %>)</td>
     </tr>
     <tr>
       <td>作詞者</td>
       <td> : </td>
-      <td><%= @song.lyricist.name %></td>
+      <td><%= @song.lyricist.name %>(ID:<%= @song.lyricist.id %>)</td>
     </tr>
     <tr>
       <td>振付師</td>
       <td> : </td>
-      <td><%= @song.choreographer.name %></td>
+      <td><%= @song.choreographer.name %>(ID:<%= @song.choreographer.id %>)</td>
     </tr>
   </tbody>
 </table>
