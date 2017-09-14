@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20170831144414) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "play_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "song_id", null: false
+    t.datetime "time", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_play_logs_on_song_id"
+  end
+
   create_table "songs", primary_key: "song_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title", null: false
     t.bigint "artist_id", null: false
@@ -45,6 +53,7 @@ ActiveRecord::Schema.define(version: 20170831144414) do
   end
 
   add_foreign_key "lyrics", "songs", primary_key: "song_id"
+  add_foreign_key "play_logs", "songs", primary_key: "song_id"
   add_foreign_key "songs", "people", column: "artist_id"
   add_foreign_key "songs", "people", column: "choreographer_id"
   add_foreign_key "songs", "people", column: "composer_id"
