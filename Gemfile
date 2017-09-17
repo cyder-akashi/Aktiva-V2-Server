@@ -41,10 +41,10 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 
-  gem 'pry-rails'
+  gem 'dotenv-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
-  gem 'dotenv-rails'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -54,14 +54,14 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running
   # in the background. Read more: https://github.com/rails/spring
-  gem 'rubocop'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'bullet'
   gem 'rails-erd'
-  gem 'annotate'
+  gem 'rubocop'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
