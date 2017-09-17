@@ -71,6 +71,11 @@ cd Aktiva-V2-Server
 bundle install --path=vendor/bundle
 ```
 
+3. envファイルをコピーし自分の設定に合わせて変更する
+```sh
+cp .env.sample .env
+```
+
 3. MySqlを起動する
 ```sh
 mysql.server start
