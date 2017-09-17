@@ -51,6 +51,11 @@ gem install bundler
 brew install mysql
 ```
 
+### graphviz(ER図自動生成用)
+```
+brew install graphviz
+```
+
 ### editorconfig plugin
 [ここ](http://editorconfig.org/#download)からエディタに合わせたものをインストールすること。
 
