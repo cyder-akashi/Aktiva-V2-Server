@@ -1,3 +1,27 @@
+# == Schema Information
+#
+# Table name: songs
+#
+#  song_id          :integer          not null, primary key
+#  title            :string(255)      not null
+#  artist_id        :integer          not null, indexed
+#  lyricist_id      :integer          indexed
+#  composer_id      :integer          indexed
+#  choreographer_id :integer          indexed
+#  beginners_badge  :boolean          default(FALSE)
+#  person_badge     :boolean          default(FALSE)
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  video            :string(255)      not null
+#
+# Foreign Keys
+#
+#  fk_rails_...  (artist_id => people.id)
+#  fk_rails_...  (choreographer_id => people.id)
+#  fk_rails_...  (composer_id => people.id)
+#  fk_rails_...  (lyricist_id => people.id)
+#
+
 # 曲情報
 class Song < ApplicationRecord
   belongs_to :artist,
