@@ -5,7 +5,7 @@ module Api
       def index
         @song = Song.find(params[:song_id])
         @lyrics = @song.lyrics.order(:time)
-        render formats: 'json', handlers: 'jbuilder'
+        render formats: "json", handlers: "jbuilder"
       end
     end
   end

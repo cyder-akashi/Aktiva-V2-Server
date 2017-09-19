@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 module Api
   module V1
@@ -7,7 +7,7 @@ module Api
         @song = songs(:one)
       end
 
-      test 'should get show' do
+      test "should get show" do
         get api_v1_lyrics_url, params: { song_id: @song.song_id }
         assert_response :success
       end
