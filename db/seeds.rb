@@ -1,3 +1,5 @@
+`bundle exec rake db:migrate:reset`
+
 hosino_gen = Person.create name: '星野 源'
 mikiko = Person.create name: 'MIKIKO'
 song_one = Song.create title: '恋',
