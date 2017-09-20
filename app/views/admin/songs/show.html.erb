@@ -16,38 +16,22 @@
   <tr>
     <td>アーティスト</td>
     <td> : </td>
-    <% if @song.artist.present? %>
-      <td><%= @song.artist.name %>(ID:<%= @song.artist.id %>)</td>
-    <% else %>
-      <td>null</td>
-    <% end %>
+    <td><%= @song.artist.try(:name) %>(ID:<%= @song.artist.try(:id) %>)</td>
   </tr>
   <tr>
     <td>作曲者</td>
     <td> : </td>
-    <% if @song.composer.present? %>
-      <td><%= @song.composer.name %>(ID:<%= @song.composer.id %>)</td>
-    <% else %>
-      <td>null</td>
-    <% end %>
+    <td><%= @song.composer.try(:name) %>(ID:<%= @song.composer.try(:id) %>)</td>
   </tr>
   <tr>
     <td>作詞者</td>
     <td> : </td>
-    <% if @song.lyricist.present? %>
-      <td><%= @song.lyricist.name %>(ID:<%= @song.lyricist.id %>)</td>
-    <% else %>
-      <td>null</td>
-    <% end %>
+    <td><%= @song.lyricist.try(:name) %>(ID:<%= @song.lyricist.try(:id) %>)</td>
   </tr>
   <tr>
     <td>振付師</td>
     <td> : </td>
-    <% if @song.choreographer.present? %>
-      <td><%= @song.choreographer.name %>(ID:<%= @song.choreographer.id %>)</td>
-    <% else %>
-      <td>null</td>
-    <% end %>
+    <td><%= @song.choreographer.try(:name) %>(ID:<%= @song.choreographer.try(:id) %>)</td>
   </tr>
 </table>
 
