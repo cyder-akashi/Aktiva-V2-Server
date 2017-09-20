@@ -63,8 +63,7 @@
 
 <h1>動画</h1>
 
-<% url = "http://133.242.226.13/" +  @song.video %>
-<%= video_tag(url, :controls => true) %>
+<%= video_tag(@video_url, :controls => true) %>
 
 <br>
 
