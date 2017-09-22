@@ -20,17 +20,10 @@ module Api
 
         def check_params
           @keyword = params[:keyword]
-          @num = if params[:num].present?
-                   params[:num].to_i
-                 else
-                   Constants::DEFAULT_NUM
-                 end
 
-          @page = if params[:page].present?
-                    params[:page].to_i
-                  else
-                    Constants::DEFAULT_PAGE
-                  end
+          # params[:num] == ""のとき、0が代入されるので注意が必要(params[:page]も同様)
+          @num = params[:num]&.to_i || Constants::DEFAULT_NUM
+          @page = params[:page]&.to_i || Constants::DEFAULT_PAGE
         end
     end
   end
