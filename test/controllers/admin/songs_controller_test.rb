@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 module Admin
   class SongsControllerTest < ActionDispatch::IntegrationTest
@@ -6,7 +6,7 @@ module Admin
       @song = songs(:one)
     end
 
-    test 'should get index' do
+    test "should get index" do
       get admin_songs_url
       assert_response :success
     end
