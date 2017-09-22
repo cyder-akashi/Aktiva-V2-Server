@@ -19,11 +19,9 @@ module Api
       private
 
         def check_params
-          @keyword = params[:keyword]
-
-          # params[:num] == ""のとき、0が代入されるので注意が必要(params[:page]も同様)
-          @num = params[:num]&.to_i || Constants::DEFAULT_NUM
-          @page = params[:page]&.to_i || Constants::DEFAULT_PAGE
+          @keyword = params[:keyword] || ""
+          @num = params[:num]&.to_i.try(:>, 0) ? params[:num].to_i : Constants::DEFAULT_NUM
+          @page = params[:page]&.to_i.try(:>, 0) ? params[:page].to_i : Constants::DEFAULT_PAGE
         end
     end
   end
