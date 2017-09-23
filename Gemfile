@@ -36,17 +36,17 @@ gem "jbuilder", "~> 2.5"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and
   # get a debugger console
-  gem "byebug", platforms: %i[mri mingw x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-
-  gem 'dotenv-rails'
-  gem 'pry-byebug'
-  gem 'pry-doc'
-  gem 'pry-rails'
   gem "capybara", "~> 2.13"
+  # Adds support for Capybara system testing and selenium driver
+  gem "capybara", "~> 2.13"
+  gem "selenium-webdriver"
+
+  gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "dotenv-rails"
   gem "onkcop", require: false
+  gem "pry-byebug"
+  gem "pry-doc"
+  gem "pry-rails"
   gem "selenium-webdriver"
 end
 
@@ -57,16 +57,16 @@ group :development do
   gem "web-console", ">= 3.3.0"
   # Spring speeds up development by keeping your application running
   # in the background. Read more: https://github.com/rails/spring
-  gem 'annotate'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'bullet'
-  gem 'rails-erd'
-  gem 'rubocop'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "annotate"
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "bullet"
+  gem "rails-erd"
+  gem "rubocop"
   gem "rubocop"
   gem "spring"
+  gem "spring"
+  gem "spring-watcher-listen", "~> 2.0.0"
   gem "spring-watcher-listen", "~> 2.0.0"
 end
 
