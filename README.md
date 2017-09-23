@@ -51,6 +51,11 @@ gem install bundler
 brew install mysql
 ```
 
+### graphviz(ER図自動生成用)
+```
+brew install graphviz
+```
+
 ### editorconfig plugin
 [ここ](http://editorconfig.org/#download)からエディタに合わせたものをインストールすること。
 
@@ -64,6 +69,11 @@ cd Aktiva-V2-Server
 2. Gemライブラリをインストールする
 ```sh
 bundle install --path=vendor/bundle
+```
+
+3. envファイルをコピーし自分の設定に合わせて変更する
+```sh
+cp .env.sample .env
 ```
 
 3. MySqlを起動する
