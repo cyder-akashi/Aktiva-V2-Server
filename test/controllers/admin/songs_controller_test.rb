@@ -15,5 +15,10 @@ module Admin
       get admin_song_url(@song.song_id)
       assert_response :success
     end
+
+    test "should get new" do
+      get new_admin_song_url(@song.song_id)
+      assert_response :success
+    end
   end
 end
