@@ -1,4 +1,71 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @song.title %> の詳細情報</h1>
+
+<table>
+  <tr>
+    <td>曲ID</td>
+    <td> : </td>
+    <td><%= @song.id %></td>
+  </tr>
+  <tr>
+    <td>曲名</td>
+    <td> : </td>
+    <td><%= @song.title %></td>
+  </tr>
+  <tr>
+    <td>アーティスト</td>
+    <td> : </td>
+    <td><%= @song.artist.try(:name) %>(ID:<%= @song.artist.try(:id) %>)</td>
+  </tr>
+  <tr>
+    <td>作曲者</td>
+    <td> : </td>
+    <td><%= @song.composer.try(:name) %>(ID:<%= @song.composer.try(:id) %>)</td>
+  </tr>
+  <tr>
+    <td>作詞者</td>
+    <td> : </td>
+    <td><%= @song.lyricist.try(:name) %>(ID:<%= @song.lyricist.try(:id) %>)</td>
+  </tr>
+  <tr>
+    <td>振付師</td>
+    <td> : </td>
+    <td><%= @song.choreographer.try(:name) %>(ID:<%= @song.choreographer.try(:id) %>)</td>
+  </tr>
+</table>
+
+<h1>Badge</h1>
+
+<table>
+  <tr>
+    <td>初心者向け</td>
+    <td> : </td>
+    <td><%= @song.beginners_badge %></td>
+  </tr>
+  <tr>
+    <td>本人映像</td>
+    <td> : </td>
+    <td><%= @song.person_badge %></td>
+  </tr>
+</table>
+
+<h1>歌詞</h1>
+
+<table>
+  <% @song.lyrics.each do |lyric| %>
+    <tr>
+     <td><%= lyric.time.strftime("%M:%S:%L") %></td>
+     <td><%= lyric.text %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h1>動画</h1>
+
+<%= video_tag(@video_url, :controls => true) %>
+
+<br>
+
 <%= link_to 'Edit', edit_admin_song_path(@song) %> |
 <%= link_to 'Back', admin_songs_path %>

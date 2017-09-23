@@ -12,6 +12,7 @@ module Admin
     # GET /songs/1
     # GET /songs/1.json
     def show
+      @video_url = "http://133.242.226.13/" + @song.video
     end
 
     # GET /songs/new
