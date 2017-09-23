@@ -34,10 +34,6 @@ gem "jbuilder", "~> 2.5"
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and
-  # get a debugger console
-  gem "capybara", "~> 2.13"
-  # Adds support for Capybara system testing and selenium driver
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
 
@@ -47,7 +43,6 @@ group :development, :test do
   gem "pry-byebug"
   gem "pry-doc"
   gem "pry-rails"
-  gem "selenium-webdriver"
 end
 
 group :development do
@@ -63,10 +58,7 @@ group :development do
   gem "bullet"
   gem "rails-erd"
   gem "rubocop"
-  gem "rubocop"
   gem "spring"
-  gem "spring"
-  gem "spring-watcher-listen", "~> 2.0.0"
   gem "spring-watcher-listen", "~> 2.0.0"
 end
 
