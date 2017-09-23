@@ -209,7 +209,6 @@ DEPENDENCIES
   onkcop
   puma (~> 3.7)
   rails (~> 5.1.2)
-  rubocop
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
